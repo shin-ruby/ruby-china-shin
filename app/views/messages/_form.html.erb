@@ -1,0 +1,11 @@
+<%= simple_form_for @message do |f| %>
+  <%= render "shared/error_messages", target: @message %>
+  <div class="control-group">
+    <%= f.text_field :content, class: "span5", placeholder: "在这里填写短信" %>
+    <%= f.hidden_field :accepter_id %>
+  </div>
+
+  <div class="control-group">
+    <%= f.submit t("common.save"), class: "btn btn-primary", 'data-disable-with' => t("common.saving") %>
+  </div>
+<% end %>
